@@ -1,6 +1,11 @@
 def suhu(kelvin):
-    # ini merupakan docstring, hanya untuk memastikan saja apakah function yang dijalankan pada saat di run benar
-    '''a'''
+    # ini merupakan docstring, untuk menjelaskan fungsi script dalam sebuah fungsi
+    '''Ini merupakan fungsi suhu,
+    disini akan ditampilkan suhu yang di input,
+    pengkonversian terhadap suhu tersebut ke sejumlah suhu lain,
+    dan ditampilkan hasil dari pengkonversian tersebut.
+    Disini juga terdapat script untuk pemanggilan fungsi lain (confirm)
+    '''
     # untuk menampilkan printout "konversi suhu:"
     print("Konversi suhu: ")
     # ini adalah script untuk menampilkan suhu yang di input
@@ -13,13 +18,22 @@ def suhu(kelvin):
     farenheit = (kelvin-273) * (9/5) + 32 
     # ini adalah script untuk menampilkan suhu yang di konversi
     print('kelvin ke farenheit  :', farenheit, "F")
+    print()
+    # ini untuk menampilkan docstring pada function
+    print("ini docstringnya: ")
+    print(suhu.__doc__)
     # ini adalah script untuk memanggil fungsi confirm
     return confirm()
     
 
 def suhu2(celcius):
-    # ini merupakan docstring, hanya untuk memastikan saja apakah function yang dijalankan pada saat di run benar
-    '''b'''
+    # ini merupakan docstring, untuk menjelaskan fungsi script dalam sebuah fungsi
+    '''Ini merupakan fungsi suhu,
+    disini akan ditampilkan suhu yang di input,
+    pengkonversian terhadap suhu tersebut ke sejumlah suhu lain,
+    dan ditampilkan hasil dari pengkonversian tersebut.
+    Disini juga terdapat script untuk pemanggilan fungsi lain (confirm)
+    '''
     print("Konversi suhu: ")
     # ini adalah script untuk menampilkan suhu yang di input
     print('Celcius              :', celcius, "C")
@@ -29,12 +43,21 @@ def suhu2(celcius):
     farenheit = celcius * (9/5) + 32 
     # ini adalah script untuk menampilkan suhu yang di konversi
     print('celcius ke farenheit :', farenheit, "F")
-    # ini adalah script untuk memanggil fungsi confirmv
+    print()
+    # ini untuk menampilkan docstring pada function
+    print("ini docstringnya: ")
+    print(suhu2.__doc__)
+    # ini adalah script untuk memanggil fungsi confirm
     return confirm()
 
 def suhu3(farenheit):
-    # ini merupakan docstring, hanya untuk memastikan saja apakah function yang dijalankan pada saat di run benar
-    '''c'''
+    # ini merupakan docstring, untuk menjelaskan fungsi script dalam sebuah fungsi
+    '''Ini merupakan fungsi suhu,
+    disini akan ditampilkan suhu yang di input,
+    pengkonversian terhadap suhu tersebut ke sejumlah suhu lain,
+    dan ditampilkan hasil dari pengkonversian tersebut.
+    Disini juga terdapat script untuk pemanggilan fungsi lain (confirm)
+    '''
     print("Konversi suhu: ")
     # ini adalah script untuk menampilkan suhu yang di input
     print('farenheit            :', farenheit, "F")
@@ -44,6 +67,10 @@ def suhu3(farenheit):
     kelvin = (farenheit-32) * (5/9) + 273 
     # ini adalah script untuk menampilkan suhu yang di konversi
     print('farenheit ke kelvin  :', kelvin, "K")
+    print()
+    # ini untuk menampilkan docstring pada function
+    print("ini docstringnya: ")
+    print(suhu3.__doc__)
     # ini adalah script untuk memanggil fungsi confirm
     return confirm()
     
@@ -70,25 +97,22 @@ def confirm():
 def opsi():
     # pembuatan variable untuk percabangan if
     # jika memilih 1-3 maka akan dibawa ke fungsinya masing-masing
+    print("pilih konversi yang anda inginkan!")
+    print("1. kelvin")
+    print("2. celcius")
+    print("3. farenheit")
+    print("4. keluar")
     perintah = input("Tekan angka untuk memilih : ")
     if perintah == "1":
         print(suhu(int(input("Masukan suhu kelvin : "))))
         print()
-        # ini hanya untuk konfirmasi saja
-        print("ini docstringnya: ")
-        print(suhu.__doc__)
+        
     elif perintah == "2":
         print(suhu2(int(input("Masukan suhu celcius : "))))
         print()
-        # ini hanya untuk konfirmasi saja
-        print("ini docstringnya: ")
-        print(suhu2.__doc__)
     elif perintah == "3":
         print(suhu3(int(input("Masukan suhu farenheit : "))))
         print()
-        # ini hanya untuk konfirmasi saja
-        print("ini docstringnya: ")
-        print(suhu3.__doc__)
     # jika user menggunakan ini maka aplikasi akan di terminate
     elif perintah == "4":
         print()
@@ -102,10 +126,5 @@ def opsi():
 
 # ini merupakan tampilan awal dari program
 print("Konversi Suhu")
-print("pilih konversi yang anda inginkan!")
-print("1. kelvin")
-print("2. celcius")
-print("3. farenheit")
-print("4. keluar")
 # ini merupakan script untuk memanggil fungsi opsi
 opsi()
