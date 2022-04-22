@@ -1,0 +1,25 @@
+disini bikin flask
+gunanya buat bikin REST APIs
+gunaninya install dulu di venv
+    "pip install Flask"
+
+buat run flask pake
+- set FLASK_APP = (nama app yang mo dijalanin.py)
+- "flask run"
+
+Kalo mau nyalain debug mode
+ada 2
+1
+- dari terminal, karena pake powershell pake ini
+- $env:FLASK_ENV = "development"
+- flask run
+
+2
+- di appnya
+- tambahin di script "app.run(debug=True)"
+- python (nama app).py
+
+*note : 
+- kalo install venv pake "python" bukan "python3"
+- ada beberapa yang nggak bisa di run di powershell (curl -d 'username=rebekah' localhost:5000/login)
+kalo kaya gitu run aja di cmd, apkny gpp run di powershell

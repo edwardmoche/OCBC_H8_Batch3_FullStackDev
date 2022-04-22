@@ -1,0 +1,32 @@
+mirip sesi 7, cuman tambah swagger
+    "pip install connexion[swagger-ui]"
+
+itu di swagger kayany mesti di ganti manual buat pathnya (buat sekarang "/people"), terus juga itu yang "people.read" mungkin bakal diganti sesuai sama pathnya (read cmn fungsi baca aj)
+**note   ^ ini bener, di akhir nanti bakal ditambah fungsi lainnya, tapi buat di run mesti di update juga yang "people.py" buat biar bisa jalanin fungsi di swaggernya (kaya nambah put, push, del)
+
+buat run swaggernya beda dari yang sebelumnya, kl contoh pyt skrg pake ini dasarnya
+    "localhost:5000/api/ui"
+
+*note
+- inget cara baca path
+static/
+│
+├── css/
+│   └── home.css
+│
+└── js/
+    └── home.js
+
+- ini model2nya bakal nambahin fitur yang lain (post, put, del) di swaggernya. sekarang baru "get" aja
+
+- jangan lupa di browser pake "/api/people", swagger tuh api
+
+- itu dia sorting berdasarkan urutan nama yang di declarasi ("farel :", "brockman :", "easter :") jadi brock, east, far
+
+- keynya lname
+
+- kalo nyari satuan, dia case sensitive (via browser : "http://localhost:5000/api/people/Easter", swagger : kek make swagger biasa)
+
+- ini data yang di i/o masih temporary, selain yang udah di definisiin (PEOPLE), kalo programnya di reset ilang. sama kalo misal yang "people" di edit/juga juga, updateanya balik lagi ke awal pas di run ulang
+
+- lname nggak bisa di edit
