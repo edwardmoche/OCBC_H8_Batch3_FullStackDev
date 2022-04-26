@@ -1,0 +1,19 @@
+di procfile
+    "web: gunicorn app:connex_app"
+yang "app:" itu nama app yang di run (katanya), jadi kl emg ngikutin yang kmaren itu mungkin jadinya kek gini
+    "web: gunicorn server:connex_app"
+
+ini tadi error di Procfile nggak bisa di push, ternyata gini
+"Just encounter "Push failed: cannot parse Procfile." on Windows. I can conclude that It IS "Windows-file format" problem, NOT the context of file itself.
+
+make sure to create a clean file, maybe use Notepad++ or other advanced editor to check the file type."
+    (https://stackoverflow.com/questions/19846342/unable-to-parse-procfile)
+
+jadi ad kemungkinan buat kedepannya bakal perlu bikin manual procfilenya
+
+heroku nggak bisa run lebih dari 1 python, kalo error liat sini
+    "https://devcenter.heroku.com/articles/one-off-dynos#:~:text=If%20you%20wish%20to%20stop,ps%3Astop%20with%20its%20name.&text=A%20one%2Doff%20dyno%20will%20not%20stop%20if%20you%20issue,ps%3Arestart%20on%20your%20application."
+
+ada error lagi, sekarang di "home.html" sama "home.css", link refrensi yang cuman pake "http" ditambahin jadi "https"
+
++ ini buat update sama delete itu yang lastname = id, jadi kalo mau pake yang form lastname di isi sama id (1/2/3/dst.)
