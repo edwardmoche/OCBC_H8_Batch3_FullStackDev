@@ -1,0 +1,8 @@
+kalo mau install pip gini aja
+selama ada req.txt pake ini
+    "pip install -r requirements.txt"
+cara bikinnya?
+    "pip freeze > requirements.txt"
+ini dipake misal mau pake tools yg sama tapi beda project, copas aja yg txt
+
+kalo mau ngatur sorting get (read all), cari yang ada "query.order_by"

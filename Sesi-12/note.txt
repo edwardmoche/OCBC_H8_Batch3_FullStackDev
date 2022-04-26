@@ -1,0 +1,87 @@
+bawaan
+- unittest
+
+instal via pip
+- nose or nose2 (pip install nose2)
+- pytest (pip install pytest)
+- tox (pip install tox) //ini buat kalo beda environtment (misal python versi 27 sama 36)
+
+cara run
+- unit test
+python -m unittest (nama file tanpa".py")
+atau tambahin aja unit test di filenya
+
+- nose2
+python -m nose2
+
+- pytest
+python -m pytest
+
+kalo test pake nose, satu folder di cek (sesi 12)
+
+pytest juga semua
+
+disini maenin directory kekny
+
+project/
+│
+└── my_sum/
+    └── __init__.py
+
+idealnya gini
+
+project/
+│
+├── my_app/
+│   └── __init__.py
+│
+└── tests/
+    |
+    ├── unit/
+    |   ├── __init__.py
+    |   └── test_sum.py
+    |
+    └── integration/
+        ├── __init__.py
+        └── test_integration.py
+nanti runnya "python -m unittest discover -s tests/integration"
+
+ini struktur data kalo didalemnya ada json
+
+project/
+│
+├── my_app/
+│   └── __init__.py
+│
+└── tests/
+    |
+    └── unit/
+    |   ├── __init__.py
+    |   └── test_sum.py
+    |
+    └── integration/
+        |
+        ├── fixtures/
+        |   ├── test_basic.json
+        |   └── test_complex.json
+        |
+        ├── __init__.py
+        └── test_integration.py
+
+ada 2 type linting
+passive
+- flake8 (pip install flake8)
+
+aggresive
+- black (pip install black)
+
+buat test benchmark apk
+pip install pytest-benchmark
+
+ngetest security apk
+pip install bandit
+
+alternatif jmeter buat python pake locust
+- bikin locustfile.py
+- https://colab.research.google.com/drive/1p_wcUzt_x-lKFRGW6_1RBFtpOPVgUrb-?usp=sharing#scrollTo=yZ-V8bNDkS-Q
+- baca didatas biar lengkap
