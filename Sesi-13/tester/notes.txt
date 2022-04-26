@@ -1,0 +1,6 @@
+py
+directors = people
+movies = notes
+
+db
+final_proj = people
