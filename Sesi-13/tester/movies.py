@@ -72,6 +72,29 @@ class Movies:
         else:
             abort(404, f"Movie {original_title} not found")
 
+    def read_one_id(movie_id):
+        """
+        This function responds to a request for /api/movies/{movie_id}
+        with one matching movie id from movies
+
+        :param id:   Movie id of movies to find
+        :return:            movies matching movie id
+        """
+
+        movie = (
+            Movie.query.filter(Movie.movie_id == movie_id)
+            .one_or_none()
+        )
+
+        if movie is not None:
+
+            movie_schema = MovieSchema()
+            data = movie_schema.dump(movie)
+            return data
+
+        else:
+            abort(404, f"Movie with id {movie_id} not found")
+
 
     def create(director_id, movie):
         """
@@ -85,9 +108,11 @@ class Movies:
         director = Director.query.filter(Director.director_id == director_id).one_or_none()
         
         movie_uid = movie.get("movie_uid")
+        original_title = movie.get("original_title")
 
         existing_uid = (
             Director.query.filter(Movie.movie_uid == movie_uid)
+            .filter(Movie.original_title == original_title)
             .one_or_none()
         )
         

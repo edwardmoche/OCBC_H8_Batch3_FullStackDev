@@ -15,7 +15,7 @@ class Directors:
 
         :return:        json string of list of directors
         """
-        directors = Director.query.order_by(Director.name).limit(50).all()
+        directors = Director.query.order_by(Director.director_id).limit(50).all()
 
         director_schema = DirectorSchema(many=True)
         data = director_schema.dump(directors)
@@ -25,7 +25,7 @@ class Directors:
     def read_one(director_id):
         """
         This function responds to a request for /api/directors/{director_id}
-        with one matching director from directors
+        with one matching director id from directors
 
         :param id:   Id of director to find
         :return:            director matching id
@@ -44,7 +44,7 @@ class Directors:
             return data
 
         else:
-            abort(404, f"Director not found for Id: {director_id}")
+            abort(404, f"Director not found for id: {director_id}")
 
     def read_one_name(name):
         """
